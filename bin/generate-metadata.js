@@ -11,10 +11,8 @@ const writeNext = async (index) => {
   }
   const metadata = {
     ...template,
-    image: mapping[index + 1],
+    image: mapping[index],
   }
-
-  console.log(metadata)
 
   fs.writeFileSync(`${dir}/${index + 1}`, JSON.stringify(metadata));
   return await writeNext(index + 1)
